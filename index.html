@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
-  <body>
+  <body style="margin: 0; overflow: hidden;">
     <a-scene mindar-image="imageTargetSrc: ./targets.mind;" 
-             color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false">
+             color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
+             vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
         
-        <a-plane src="context.png" position="0 0.6 0" height="0.15" width="0.8" transparent="true"></a-plane>
+        <a-image src="context.png" position="0 0.8 0" width="1.2" height="0.35" transparent="true"></a-image>
         
-        <a-plane src="left.png" position="-0.35 0.1 0.1" height="0.5" width="0.4" transparent="true"></a-plane>
+        <a-image src="left.png" position="-0.45 0.1 0.1" width="0.55" height="0.75" transparent="true"></a-image>
         
-        <a-plane src="right.png" position="0.35 0.1 0.1" height="0.5" width="0.4" transparent="true"></a-plane>
+        <a-image src="right.png" position="0.45 0.1 0.1" width="0.55" height="0.75" transparent="true"></a-image>
         
-        <a-plane src="fact.png" position="0 -0.4 0.2" height="0.15" width="0.7" transparent="true"></a-plane>
+        <a-image src="fact.png" position="0 -0.6 0.2" width="1.0" height="0.3" transparent="true"></a-image>
 
       </a-entity>
     </a-scene>
